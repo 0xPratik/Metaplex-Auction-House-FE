@@ -9,6 +9,8 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 import { Box, Heading } from "@chakra-ui/react";
 import HomeLayout from "../layouts/Home";
+import * as anchor from "@project-serum/anchor";
+import { Program } from "@project-serum/anchor";
 
 const Home: NextPage = () => {
   return (
