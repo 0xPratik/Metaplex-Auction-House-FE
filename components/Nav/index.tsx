@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Input,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -50,7 +51,11 @@ export default function WithSubnavigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex
+          flex={{ base: 1 }}
+          align="center"
+          justify={{ base: "center", md: "start" }}
+        >
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
@@ -61,7 +66,8 @@ export default function WithSubnavigation() {
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
+            {/* <DesktopNav /> */}
+            <Input size="sm" w="80" placeholder="Search" />
           </Flex>
         </Flex>
 
@@ -237,41 +243,11 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Learn Design",
+    label: "Explore",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "Admin",
     href: "#",
   },
 ];
